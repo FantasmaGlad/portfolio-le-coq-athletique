@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans text-slate-900 bg-gradient-to-br from-white via-slate-50 to-blue-50;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.04) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(239, 68, 68, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(147, 197, 253, 0.05) 0%, transparent 100%);
+    background-size: 800px 800px, 600px 600px, 400px 400px;
+    animation: backgroundMove 20s ease-in-out infinite;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  @keyframes backgroundMove {
+    0%, 100% { background-position: 0% 0%, 100% 100%, 50% 50%; }
+    50% { background-position: 100% 100%, 0% 0%, 25% 75%; }
+  }
+
+
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-coq-navy hover:bg-coq-gray-dark text-white font-medium py-4 px-8 rounded-xl transition-all duration-300 border border-coq-navy hover:border-coq-gray-dark shadow-md hover:shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-white/80 backdrop-blur-sm border border-coq-navy/20 text-coq-navy hover:bg-coq-navy hover:text-white font-medium py-4 px-8 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg;
+  }
+  
+  .btn-accent {
+    @apply bg-coq-red hover:bg-coq-red-dark text-white font-medium py-4 px-8 rounded-xl transition-all duration-300 border border-coq-red hover:border-coq-red-dark shadow-md hover:shadow-lg;
+  }
+  
+  .section-padding {
+    @apply py-20 md:py-32;
+  }
+  
+  .container-custom {
+    @apply max-w-6xl mx-auto px-6 md:px-8;
+  }
+  
+  .gradient-bg {
+    @apply bg-gradient-to-br from-slate-800 to-slate-900;
+  }
+  
+  .card-modern {
+    @apply transition-all duration-300 hover:shadow-xl border border-coq-border rounded-2xl bg-white/60 backdrop-blur-sm hover:bg-white/80;
+  }
+  
+  .text-subtle {
+    @apply text-coq-gray;
+  }
+  
+  .bg-subtle {
+    @apply bg-white/40 backdrop-blur-sm;
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .section-padding {
+      @apply py-12 md:py-20;
+    }
+    
+    .container-custom {
+      @apply px-4;
+    }
+  }
+}
