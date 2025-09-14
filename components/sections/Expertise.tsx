@@ -75,7 +75,7 @@ const Expertise = () => {
     }
   };
 
-  const categories = [...new Set(expertises.map(e => e.category))];
+  const categories = Array.from(new Set(expertises.map(e => e.category)));
   const filteredExpertises = selectedCategory 
     ? expertises.filter(e => e.category === selectedCategory)
     : expertises;
