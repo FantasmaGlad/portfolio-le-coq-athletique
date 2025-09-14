@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import Button from '../ui/Button';
+import Logo from '../ui/Logo';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,9 +20,7 @@ const Header = () => {
 
   const navItems = [
     { name: 'Ma Méthode', href: '#method' },
-    { name: 'Expertises', href: '#expertise' },
-    { name: 'Mon Camp de Base', href: '#location' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Expertises', href: '#expertise' }
   ];
 
   const scrollToSection = (href: string) => {
@@ -52,17 +51,7 @@ const Header = () => {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             whileHover={{ scale: 1.02 }}
           >
-            <div className="w-8 h-8 lg:w-10 lg:h-10 bg-white rounded-xl flex items-center justify-center shadow-lg border border-slate-200 overflow-hidden">
-              <img 
-                src="/logo-coq-athletique.png" 
-                alt="Le Coq Athlétique" 
-                className="w-6 h-6 lg:w-8 lg:h-8 object-contain"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                  e.currentTarget.parentElement!.innerHTML = '<div class="text-red-600 font-bold text-sm lg:text-lg">🐓</div>';
-                }}
-              />
-            </div>
+            <Logo size="md" />
             <div className="font-display font-bold text-lg lg:text-xl text-slate-800">
               Le Coq <span className="text-red-600">Athlétique</span>
             </div>

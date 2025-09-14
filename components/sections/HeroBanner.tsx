@@ -204,6 +204,8 @@ const HeroBanner = () => {
                     width={350}
                     height={350}
                     className="w-80 h-80 lg:w-96 lg:h-96 object-contain drop-shadow-lg"
+                    priority
+                    unoptimized
                     onError={() => {
                       console.log('Logo not found, using fallback');
                     }}

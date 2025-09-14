@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Logo from '../ui/Logo';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -36,17 +37,7 @@ const Footer = () => {
               transition={{ duration: 0.4 }}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-white rounded-xl flex items-center justify-center shadow-lg border border-slate-300 overflow-hidden">
-                  <img 
-                    src="/logo-coq-athletique.png" 
-                    alt="Le Coq Athlétique" 
-                    className="w-8 h-8 lg:w-10 lg:h-10 object-contain"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                      e.currentTarget.parentElement!.innerHTML = '<div class="text-red-600 font-bold text-lg">🐓</div>';
-                    }}
-                  />
-                </div>
+                <Logo size="lg" />
                 <div className="font-display font-bold text-xl lg:text-2xl text-slate-200">
                   Le Coq <span className="text-red-400">Athlétique</span>
                 </div>
