@@ -68,56 +68,56 @@ export const expertises: Expertise[] = [
   {
     id: '1',
     title: 'Préparation Physique',
-    description: 'Développement de la force, puissance et endurance selon ta discipline',
+    description: 'Développement explosif de ta force, puissance et endurance pour dominer ta discipline',
     icon: '💪',
     category: 'force'
   },
   {
     id: '2',
     title: 'Préparation Mentale',
-    description: 'Techniques de visualisation, gestion du stress et concentration optimale',
+    description: 'Techniques de visualisation, gestion du stress et concentration laser pour performer sous pression',
     icon: '🧠',
     category: 'mental'
   },
   {
     id: '3',
     title: 'Périodisation',
-    description: 'Planification intelligente pour atteindre ton pic au bon moment',
+    description: 'Planification scientifique pour exploser tes performances au moment décisif',
     icon: '📊',
     category: 'technique'
   },
   {
     id: '4',
     title: 'Récupération',
-    description: 'Protocoles de régénération et optimisation du sommeil',
+    description: 'Protocoles de régénération accélérée et optimisation du sommeil pour une récupération d\'élite',
     icon: '♻️',
     category: 'recuperation'
   },
   {
     id: '5',
     title: 'Nutrition Performance',
-    description: 'Stratégies alimentaires personnalisées pour maximiser tes résultats',
+    description: 'Stratégies nutritionnelles sur-mesure pour décupler tes performances et ta récupération',
     icon: '🥗',
     category: 'recuperation'
   },
   {
     id: '6',
     title: 'Analyse Biomécanique',
-    description: 'Optimisation du geste technique pour plus d\'efficacité',
+    description: 'Analyse biomécanique avancée pour perfectionner chaque geste et gagner en efficacité',
     icon: '⚙️',
     category: 'technique'
   },
   {
     id: '7',
     title: 'Cercle Restreint',
-    description: 'Accompagnement exclusif pour athlètes sélectionnés',
+    description: 'Accompagnement VIP ultra-personnalisé réservé aux athlètes d\'exception',
     icon: '👥',
     category: 'exclusif'
   },
   {
     id: '8',
     title: 'Suivi Exclusif',
-    description: 'Monitoring personnalisé et ajustements en temps réel',
+    description: 'Monitoring 24/7 et ajustements tactiques en temps réel pour rester au sommet',
     icon: '📱',
     category: 'exclusif'
   }

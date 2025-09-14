@@ -42,17 +42,17 @@ const HeroBanner = () => {
         ></motion.div>
       </div>
 
-      <div className="container-custom min-h-screen flex items-center relative z-10 pt-20">
+      <div className="container-custom min-h-screen flex items-center relative z-10 pt-16 sm:pt-20">
         <div className="w-full">
           {/* Main Content Grid */}
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center lg:items-start">
             
             {/* Left Side - Text Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="space-y-8 lg:space-y-10 pt-8 lg:pt-16"
+              className="space-y-6 sm:space-y-8 lg:space-y-10 pt-4 sm:pt-8 lg:pt-16 text-center lg:text-left"
             >
               {/* Brand Text */}
               <motion.div 
@@ -76,21 +76,21 @@ const HeroBanner = () => {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="space-y-6"
               >
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-tight text-slate-900">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-tight text-slate-900">
                   Clément<br />
                   <span className="text-red-600">Barillot</span>
                 </h1>
                 
                 {/* Enhanced Subtitle */}
                 <div className="relative inline-block">
-                  <p className="text-xl lg:text-2xl font-semibold text-blue-700 bg-blue-50 px-6 py-3 rounded-2xl border border-blue-200 shadow-md">
+                  <p className="text-lg sm:text-xl lg:text-2xl font-semibold text-blue-700 bg-blue-50 px-4 sm:px-6 py-3 rounded-2xl border border-blue-200 shadow-md">
                     Préparateur Physique et Mental
                   </p>
                 </div>
                 
                 {/* Enhanced Description */}
                 <div className="relative max-w-2xl">
-                  <p className="text-lg lg:text-xl text-slate-700 leading-relaxed bg-white/80 backdrop-blur-sm px-6 py-6 rounded-2xl shadow-lg border border-slate-200">
+                  <p className="text-base sm:text-lg lg:text-xl text-slate-700 leading-relaxed bg-white/80 backdrop-blur-sm px-4 sm:px-6 py-4 sm:py-6 rounded-2xl shadow-lg border border-slate-200">
                     Ton potentiel est un{' '}
                     <strong className="text-slate-900 font-bold bg-slate-100 px-2 py-1 rounded-lg">
                       point de départ
@@ -146,37 +146,6 @@ const HeroBanner = () => {
                 </motion.div>
               </motion.div>
 
-              {/* Stats Row */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.0 }}
-                className="pt-8"
-              >
-                <div className="flex flex-wrap justify-center gap-2 lg:gap-3 max-w-4xl mx-auto">
-                  {[
-                    { number: "3+", label: "Années", icon: "🏆" },
-                    { number: "100%", label: "Personnalisé", icon: "🎯" },
-                    { number: "Oyonnax", label: "France", icon: "📍" },
-                    { number: "Cercle", label: "Restreint", icon: "👥" },
-                    { number: "Suivi", label: "Exclusif", icon: "📱" }
-                  ].map((stat, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
-                      className="flex items-center gap-3 bg-white/90 px-4 lg:px-5 py-3 lg:py-4 rounded-xl shadow-lg border border-slate-200 flex-shrink-0"
-                    >
-                      <span className="text-xl lg:text-2xl">{stat.icon}</span>
-                      <div>
-                        <div className="text-base lg:text-lg font-bold text-slate-900">{stat.number}</div>
-                        <div className="text-sm lg:text-base text-slate-600">{stat.label}</div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
             </motion.div>
 
             {/* Right Side - Logo */}
@@ -184,7 +153,7 @@ const HeroBanner = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex justify-center lg:justify-end pt-12 lg:pt-20"
+              className="flex justify-center lg:justify-end pt-8 sm:pt-12 lg:pt-20 order-first lg:order-last"
             >
               <motion.div 
                 whileHover={{ 
@@ -197,13 +166,13 @@ const HeroBanner = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-blue-500/20 rounded-3xl blur-2xl opacity-60 group-hover:opacity-100 transition-all duration-500 scale-110"></div>
                 
                 {/* Logo container */}
-                <div className="relative w-96 h-96 lg:w-[28rem] lg:h-[28rem] bg-white rounded-3xl flex items-center justify-center shadow-2xl border-4 border-white/70 group-hover:border-white/90 transition-all duration-300">
+                <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] bg-white rounded-3xl flex items-center justify-center shadow-2xl border-4 border-white/70 group-hover:border-white/90 transition-all duration-300">
                   <Image 
                     src="/logo-coq-athletique.png" 
                     alt="Le Coq Athlétique Logo" 
                     width={350}
                     height={350}
-                    className="w-80 h-80 lg:w-96 lg:h-96 object-contain drop-shadow-lg"
+                    className="w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 object-contain drop-shadow-lg"
                     priority
                     unoptimized
                     onError={() => {

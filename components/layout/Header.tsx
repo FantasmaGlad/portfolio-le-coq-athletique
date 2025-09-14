@@ -44,7 +44,7 @@ const Header = () => {
       }`}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between py-4 lg:py-6">
+        <div className="flex items-center justify-between py-3 sm:py-4 lg:py-6">
           {/* Logo */}
           <motion.div
             className="cursor-pointer flex items-center gap-3"
@@ -52,7 +52,7 @@ const Header = () => {
             whileHover={{ scale: 1.02 }}
           >
             <Logo size="md" />
-            <div className="font-display font-bold text-lg lg:text-xl text-slate-800">
+            <div className="font-display font-bold text-base sm:text-lg lg:text-xl text-slate-800">
               Le Coq <span className="text-red-600">Athlétique</span>
             </div>
           </motion.div>
@@ -63,14 +63,14 @@ const Header = () => {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="font-medium transition-colors duration-200 text-slate-700 hover:text-red-600 text-sm lg:text-base"
+                className="font-medium transition-colors duration-200 text-slate-700 hover:text-red-600 text-sm"
               >
                 {item.name}
               </button>
             ))}
             <Button
               onClick={() => scrollToSection('#contact')}
-              className="btn-primary text-sm lg:text-base"
+              className="btn-primary text-sm"
             >
               Contact
             </Button>

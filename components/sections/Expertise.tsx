@@ -129,7 +129,7 @@ const Expertise = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16 lg:mb-24"
+          className="text-center mb-12 sm:mb-16 lg:mb-24"
         >
           <motion.div
             initial={{ scale: 0.9 }}
@@ -137,7 +137,7 @@ const Expertise = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-8 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 sm:mb-8 leading-tight">
               Mes <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">Expertises</span>
             </h2>
             <div className="flex items-center justify-center gap-2 mb-8">
@@ -152,7 +152,7 @@ const Expertise = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto px-6 py-6 bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 shadow-2xl"
+            className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto px-4 sm:px-6 py-4 sm:py-6 bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 shadow-2xl"
           >
             Un éventail complet de compétences pour optimiser chaque aspect de ta performance. 
             <span className="text-white font-semibold"> Excellence garantie</span> dans chaque domaine.
@@ -165,13 +165,13 @@ const Expertise = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-3 mb-12 lg:mb-16"
+          className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 lg:mb-16 px-4 sm:px-0"
         >
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setSelectedCategory(null)}
-            className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+            className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium text-sm sm:text-base transition-all duration-300 ${
               selectedCategory === null
                 ? 'bg-gradient-to-r from-red-500 to-orange-500 text-white shadow-lg shadow-red-500/25'
                 : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white backdrop-blur-sm border border-white/20'
@@ -187,7 +187,7 @@ const Expertise = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setSelectedCategory(category === selectedCategory ? null : category)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium text-sm sm:text-base transition-all duration-300 ${
                   selectedCategory === category
                     ? `${categoryInfo.bg} text-white shadow-lg ${categoryInfo.shadow}`
                     : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white backdrop-blur-sm border border-white/20'
@@ -206,7 +206,7 @@ const Expertise = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
         >
           {filteredExpertises.map((expertise, index) => {
             const categoryInfo = getCategoryColor(expertise.category);
@@ -224,26 +224,26 @@ const Expertise = () => {
                   whileHover={{ y: -8, scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                   className={`
-                    relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full
+                    relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 sm:p-6 h-full
                     transition-all duration-500 hover:shadow-2xl hover:border-white/20
                     ${hoveredCard === expertise.id ? `bg-gradient-to-br ${categoryInfo.gradient} shadow-xl ${categoryInfo.shadow}` : ''}
                   `}
                 >
                   {/* Glowing background effect */}
                   <div className={`
-                    absolute inset-0 rounded-3xl opacity-0 transition-all duration-500
+                    absolute inset-0 rounded-2xl opacity-0 transition-all duration-500
                     bg-gradient-to-br ${categoryInfo.gradient}
                     ${hoveredCard === expertise.id ? 'opacity-100' : ''}
                   `} />
 
                   <div className="relative z-10 flex flex-col h-full">
                     {/* Enhanced Icon */}
-                    <div className="relative mb-6">
+                    <div className="relative mb-4">
                       <motion.div
                         animate={hoveredCard === expertise.id ? { scale: [1, 1.1, 1] } : {}}
                         transition={{ duration: 0.5 }}
                         className={`
-                          relative text-5xl lg:text-6xl p-6 rounded-2xl text-center
+                          relative text-3xl sm:text-4xl lg:text-5xl p-3 sm:p-4 rounded-xl text-center
                           bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20
                           ${hoveredCard === expertise.id ? `shadow-xl ${categoryInfo.shadow}` : ''}
                         `}
@@ -253,33 +253,33 @@ const Expertise = () => {
                         <motion.div
                           animate={hoveredCard === expertise.id ? { scale: [1, 1.2, 1], opacity: [0, 0.5, 0] } : {}}
                           transition={{ duration: 1, repeat: Infinity }}
-                          className={`absolute inset-0 rounded-2xl ${categoryInfo.bg}/30`}
+                          className={`absolute inset-0 rounded-xl ${categoryInfo.bg}/30`}
                         />
                       </motion.div>
                     </div>
 
                     {/* Content */}
-                    <div className="flex-1 space-y-4">
-                      <h3 className="text-xl lg:text-2xl font-display font-bold text-white group-hover:text-white transition-colors duration-300">
+                    <div className="flex-1 space-y-3">
+                      <h3 className="text-base sm:text-lg lg:text-xl font-display font-bold text-white group-hover:text-white transition-colors duration-300">
                         {expertise.title}
                       </h3>
 
-                      <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300 flex-1">
+                      <p className="text-xs sm:text-sm text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300 flex-1">
                         {expertise.description}
                       </p>
                     </div>
 
                     {/* Enhanced Category Badge */}
-                    <div className="mt-6 pt-4 border-t border-white/10">
+                    <div className="mt-4 pt-3 border-t border-white/10">
                       <motion.span 
                         whileHover={{ scale: 1.05 }}
                         className={`
-                          inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold text-white
+                          inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold text-white
                           ${categoryInfo.bg} shadow-lg ${categoryInfo.shadow}
                           transition-all duration-300
                         `}
                       >
-                        <span className="w-2 h-2 bg-white rounded-full mr-2 opacity-80"></span>
+                        <span className="w-1.5 h-1.5 bg-white rounded-full mr-1.5 opacity-80"></span>
                         {categoryInfo.label}
                       </motion.span>
                     </div>
@@ -287,7 +287,7 @@ const Expertise = () => {
                     {/* Animated bottom line */}
                     <motion.div 
                       className={`
-                        mt-4 h-1 rounded-full ${categoryInfo.bg}
+                        mt-3 h-0.5 rounded-full ${categoryInfo.bg}
                         transition-all duration-500 origin-left
                         ${hoveredCard === expertise.id ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-60'}
                       `}
@@ -305,7 +305,7 @@ const Expertise = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-20 lg:mt-28"
+          className="text-center mt-16 sm:mt-20 lg:mt-28"
         >
           <motion.div
             whileHover={{ scale: 1.05 }}
